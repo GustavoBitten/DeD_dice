@@ -13,15 +13,14 @@
   "license": "MIT",
   "dependencies": {
     "@types/cors": "^2.8.7",
-    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "pg": "^8.3.3",
+    "random-js": "^2.1.0",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^9.0.0",
-    "typeorm": "^0.2.25",
-    "uuidv4": "^6.1.0"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
