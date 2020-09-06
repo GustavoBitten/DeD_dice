@@ -1,10 +1,12 @@
 import { dice, MersenneTwister19937 } from "random-js"
+import AppError from "../errors/AppError"
 
 
 interface RequestDTO{
     numberDices:number
     sidesDice:number
     }
+
 interface ResponseDTO{
     resultDices:{
         value: number
@@ -18,6 +20,10 @@ class GenereteDicesService{
     public async execute({numberDices,sidesDice}: RequestDTO): Promise<ResponseDTO>{
 
         const resultDicesRaw = dice(sidesDice,numberDices)(MersenneTwister19937.autoSeed())
+
+        if(numberDices >1000 || sidesDice >1000){
+            throw new AppError('Deu erro')
+        }
 
         var order = 0
         const resultDices = resultDicesRaw.map((dice)=>{
