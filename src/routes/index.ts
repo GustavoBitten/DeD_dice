@@ -1,14 +1,26 @@
 import {Router} from 'express'
 import { dice, integer,MersenneTwister19937 } from "random-js";
+import GenereteDicesService from '../services/GenereteDicesService';
 
 const routes = Router()
 
-routes.get('/', async(req,res)=>{
+routes.post('/', async(req,res)=>{
 
-     const teste =dice(100,10)(MersenneTwister19937.autoSeed())
-     
-    return res.json(teste)
+    const {numberDices,sidesDice} = req.body
+    const genereteDices = new GenereteDicesService()
+    const {resultDices} = await genereteDices.execute({numberDices,sidesDice})     
+    return res.json(resultDices)
 
 })
+
+routes.get('/history', async(req,res)=>{
+
+    
+   return res.json('Em construção')
+
+})
+
+
+
 
 export default routes
