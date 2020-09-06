@@ -1,7 +1,7 @@
 {
   "name": "DeD_dice-Api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "repository": "https://github.com/GustavoBitten/DeD_dice-Api",
   "scripts": {
     "build": "tsc",
