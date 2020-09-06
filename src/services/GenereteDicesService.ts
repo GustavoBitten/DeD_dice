@@ -6,14 +6,31 @@ interface RequestDTO{
     sidesDice:number
     }
 interface ResponseDTO{
-    resultDices:number[]
+    resultDices:{
+        value: number
+        order: number
+        type: string
+    }[]
 
 }
 
 class GenereteDicesService{
     public async execute({numberDices,sidesDice}: RequestDTO): Promise<ResponseDTO>{
 
-        const resultDices = dice(sidesDice,numberDices)(MersenneTwister19937.autoSeed())
+        const resultDicesRaw = dice(sidesDice,numberDices)(MersenneTwister19937.autoSeed())
+
+        var order = 0
+        const resultDices = resultDicesRaw.map((dice)=>{
+            order++
+            return {
+                value:dice,
+                type: `D${sidesDice}`,
+                order 
+            }
+        })
+
+
+
 
         return {
             resultDices
