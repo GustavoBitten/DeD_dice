@@ -1,0 +1,11 @@
+{
+    "type": "postgres",
+    "host":"lallah.db.elephantsql.com",
+    "port": 5432,
+    "username":"xwuiurix",
+    "password": "GjtfGVsEqFPsKuc23jcleFkNUysFkG5J",
+    "database": "xwuiurix",
+    "entities":["./src/models/*.ts"],
+    "migrations":["./src/database/migrations/*.ts"],
+    "cli": { "migrationsDir": "./src/database/migrations"}
+}
