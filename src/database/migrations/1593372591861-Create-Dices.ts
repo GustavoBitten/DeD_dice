@@ -5,7 +5,7 @@ export default class CreateAppointments1593372591861 implements MigrationInterfa
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name:'appointments',
+                name:'dices',
                 columns:[
                     {
                         name: 'id',
@@ -16,12 +16,20 @@ export default class CreateAppointments1593372591861 implements MigrationInterfa
 
                     },
                     {
-                        name: 'provider',
+                        name: 'name',
                         type:'varchar',
                     },
                     {
-                        name: 'date',
-                        type:'timestamp with time zone',
+                        name: 'order',
+                        type:'integer',
+                    },
+                    {
+                        name: 'value',
+                        type:'integer',
+                    },
+                    {
+                        name: 'type',
+                        type:'varchar',
                     },
                     {
                         name: 'created_at',
@@ -44,7 +52,7 @@ export default class CreateAppointments1593372591861 implements MigrationInterfa
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('appointments')
+        await queryRunner.dropTable('dices')
 
 
 

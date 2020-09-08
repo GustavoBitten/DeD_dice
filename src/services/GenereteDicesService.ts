@@ -22,7 +22,7 @@ class GenereteDicesService{
 
         const resultDicesRaw = dice(sidesDice,numberDices)(MersenneTwister19937.autoSeed())
 
-        if(numberDices >1000 || sidesDice >1000){
+        if(numberDices >6 || sidesDice >1000){
             throw new AppError('Deu erro')
         }
 

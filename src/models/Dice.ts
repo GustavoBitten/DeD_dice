@@ -8,8 +8,8 @@ import {
 
 
 
-@Entity('users')
-class User {
+@Entity('dices')
+class Dice {
     @PrimaryGeneratedColumn('uuid')
     id: string
 
@@ -17,13 +17,13 @@ class User {
     name: string
 
     @Column()
-    email: string
+    order: number
 
     @Column()
-    avatar: string
+    value: number
 
     @Column()
-    password: string
+    type: string
 
     @CreateDateColumn()
     created_at: Date
@@ -34,4 +34,4 @@ class User {
 
 }
 
-export default User;
+export default Dice;
