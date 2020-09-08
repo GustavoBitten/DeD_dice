@@ -5,6 +5,7 @@ import AppError from "../errors/AppError"
 interface RequestDTO{
     numberDices:number
     sidesDice:number
+    name: string
     }
 
 interface ResponseDTO{
@@ -17,7 +18,7 @@ interface ResponseDTO{
 }
 
 class GenereteDicesService{
-    public async execute({numberDices,sidesDice}: RequestDTO): Promise<ResponseDTO>{
+    public async execute({numberDices,sidesDice,name}: RequestDTO): Promise<ResponseDTO>{
 
         const resultDicesRaw = dice(sidesDice,numberDices)(MersenneTwister19937.autoSeed())
 
@@ -31,6 +32,7 @@ class GenereteDicesService{
             return {
                 value:dice,
                 type: `D${sidesDice}`,
+                name,
                 order 
             }
         })

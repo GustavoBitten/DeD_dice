@@ -6,9 +6,9 @@ const routes = Router()
 
 routes.post('/', async(req,res)=>{
 
-    const {numberDices,sidesDice} = req.body
+    const {numberDices,sidesDice,name} = req.body
     const genereteDices = new GenereteDicesService()
-    const {resultDices} = await genereteDices.execute({numberDices,sidesDice})     
+    const {resultDices} = await genereteDices.execute({numberDices,sidesDice,name})     
     return res.json(resultDices)
 
 })
