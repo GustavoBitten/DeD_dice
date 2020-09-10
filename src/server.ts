@@ -4,20 +4,20 @@ import 'express-async-errors'
 import routes from './routes'
 import cors from "cors";
 import http from "http";
+import './database'
+import AppError from './errors/AppError'
 
-import SocketIO,{Server} from "socket.io";
+import SocketIO from "socket.io";
 
 const app = express()
 const server = http.createServer(app);
 const io = SocketIO(server);
 
-const PORT : string|number = process.env.PORT || 3344;
+const PORT : string|number = process.env.PORT || 3333;
 
+app.use(json())
 app.use(cors())
 app.use(routes)
-app.use(json())
-import './database'
-import AppError from './errors/AppError'
 
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) =>{
