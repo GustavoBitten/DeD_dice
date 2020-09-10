@@ -5,7 +5,7 @@
   "repository": "https://github.com/GustavoBitten/DeD_dice-Api",
   "scripts": {
     "build": "tsc",
-    "dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
+    "dev:server": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",
     "start": "ts-node src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
@@ -13,12 +13,14 @@
   "license": "MIT",
   "dependencies": {
     "@types/cors": "^2.8.7",
+    "@types/socket.io": "^2.1.11",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "pg": "^8.3.3",
     "random-js": "^2.1.0",
     "reflect-metadata": "^0.1.13",
+    "socket.io": "^2.2.0",
     "ts-node": "^9.0.0",
     "typeorm": "^0.2.25"
   },
